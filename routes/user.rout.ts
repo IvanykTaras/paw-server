@@ -1,9 +1,9 @@
 import { Router } from "express";
 import { deleteUser, getUserById, getUser, postUser, putUser } from "../controllers/user.controller";
+import { authenticateToken } from "..";
 
 const express = require("express");
 const router: Router = express.Router();
-
 
 
 router.get("/",getUser);
