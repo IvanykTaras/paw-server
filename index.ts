@@ -13,6 +13,7 @@ const functionalityRoute: Router = require("./routes/functionality.rout");
 const projectRoute: Router = require("./routes/project.rout");
 const taskRoute: Router = require("./routes/task.rout");
 const userRoute: Router = require("./routes/user.rout");
+const authUserRoute: Router = require("./routes/authUser.rout"); 
 const authoriazationRoute: Router = require("./routes/authorization.rout");
 
 const PORT = 8000;
@@ -35,6 +36,7 @@ app.use("/api/functionality", functionalityRoute);
 app.use("/api/project", projectRoute);
 app.use("/api/task", taskRoute);
 app.use("/api/user", userRoute);
+app.use("/api/authuser", authUserRoute);
 app.use("/api/authoriazation", authoriazationRoute)
 
 
@@ -47,7 +49,7 @@ app.use("/api/authoriazation", authoriazationRoute)
 //
 
 export function generateAccessToken(e: IUser) {
-    return sign(e, ACCESS_SECRET_TOKEN, {expiresIn: "5m"})
+    return sign(e, ACCESS_SECRET_TOKEN, {expiresIn: "10m"})
 }
 
 export function generateRefreshToken(e: IUser){
